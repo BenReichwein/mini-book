@@ -8,9 +8,8 @@ npm install
 
 # Start API Server
 npm start
-```
-### Make a .env file in /server
-```
+
+# Make a .env file in /server
 PORT=8080
 SECRET_KEY=ThisSecretKey
 MONGO=mongo.uri.username.password
