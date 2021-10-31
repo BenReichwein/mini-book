@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import Avatar from '../asset/avatar.svg';
 import './header.css'
 
 const Header = () => {
@@ -11,10 +13,15 @@ const Header = () => {
       <Link to="/post" className='item'>
         Reads
       </Link>
-      <Link to="/profile" className='item'>
-        Profile
+      <Link to="/home" className='itemMiddle'>
+        MINI BOOKS
       </Link>
-      <div className="dot"></div>
+      <Link to="/publish" className='itemRight' style={{right: '9%', top: '70%'}}>
+        Publish
+      </Link>
+      <Link to="/profile" className='itemRight' style={{right: '2%', top: '60%'}}>
+        <img src={Avatar} alt="Avatar" />
+      </Link>
     </div>
   );
 };
