@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react'
+
+import HeaderCard from '../../components/header-card/header-card';
 import {welcomeMessage} from '../../actions'
+import history from '../../history';
 
 class Home extends Component {
     componentDidMount() {
@@ -9,6 +12,12 @@ class Home extends Component {
     render() {
         return (
             <div>
+                <HeaderCard 
+                    titleText="Still need to decide on text that
+                    will relatively be this length but talks about reading..."
+                    buttonText="Visit Reads"
+                    buttonClick={()=> history.push('reads')}
+                />
                 {this.props.message}
             </div>
         )

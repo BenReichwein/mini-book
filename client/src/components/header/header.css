@@ -124,15 +124,9 @@
     transition: 250ms;
   }
 
-  Button {
+  .navbar Button {
     display: flex;
-    text-align: center;
-    padding: 1.5rem;
     margin: 2rem auto;
-    border-radius: 4px;
-    background: #808080;
-    text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
   }
 }
