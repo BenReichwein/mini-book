@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
 import withAuth from './middleware/with-auth'
-import Header from './components/header'
+import Header from './components/header/header'
 import Home from './pages/home/home'
 import Login from './pages/auth/login'
 import Profile from './pages/auth/profile'
