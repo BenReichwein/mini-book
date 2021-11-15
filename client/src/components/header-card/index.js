@@ -2,15 +2,17 @@
 import React from 'react'
 
 import BookGirl from '../../asset/book-girl.svg';
-import './header-card.css'
+import './styles.css'
 
 export default function HeaderCard({titleText, buttonText, buttonClick}) {
     return (
         <div className="headerCard">
-            <h3>{titleText}</h3>
-            <button onClick={buttonClick}>
-                {buttonText}
-            </button>
+            <h4>{titleText}</h4>
+            {buttonText ? (
+                <button onClick={buttonClick}>
+                    {buttonText}
+                </button>
+            ): null}
             <img src={BookGirl}/>
         </div>
     )

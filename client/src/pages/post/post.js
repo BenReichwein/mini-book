@@ -1,7 +1,11 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { createPost, getPost, deletePost, createComment, deleteComment, getUid } from '../../actions';
-import PostForm from '../../components/forms/post-form';
+import HeaderCard from '../../components/header-card';
+import Card from '../../components/card';
+import './post.css'
 
 class Post extends React.Component {
     onSubmit = formValues => {
@@ -14,62 +18,64 @@ class Post extends React.Component {
     }
 
     render() {
-        if (this.props.posts.length > 0) {
-            return (
-                <div>
-                    <div>
-                        <h3>Post List</h3>
-                        <ul>
-                            { this.props.posts.map(post =>
-                            <li key={post._id}>
-                                <p>
-                                    {post.title}<br/>
-                                    {post.description}<br/>
-                                    Comments: {
-                                        post.comments.length >= 1 ?
-                                        post.comments.map(comment =>
-                                            <p>
-                                                <br/>
-                                                {comment.comment}
-                                                <button onClick={()=> this.props.history.push(`/userProfile/${comment.commentUid}`)}>User</button>
-                                                <button 
-                                                onClick={()=> this.props.deleteComment(comment.comment, comment.commentUid, comment.postId)} 
-                                                style={
-                                                    comment.commentUid === this.props.auth ? {} : {display: 'none'} &&
-                                                    comment.postUid === this.props.auth ? {} : {display: 'none'}}>Delete</button>
-                                            </p>
-                                        )
-                                        : <label>No Comments</label>
-                                    }
-                                </p>
-                                <br/>
-                                <button onClick={()=> this.props.deletePost(post._id)} style={
-                                    post.postUid === this.props.auth ? {} : {display: 'none'}}>Delete</button>
-                                <button onClick={()=> this.props.history.push(`/userProfile/${post.postUid}`)}>User</button>
-                                <button onClick={()=> this.props.createComment('Test Comment', post.postUid, post._id)}>Add Test Comment</button>
-                            </li>
-                            )}
-                        </ul>
+        return (
+            <div className="postContainer">
+                <HeaderCard 
+                    titleText="Still need to decide on text that
+                    will relatively be this length but talks about reading..."
+                />
+                <div class="cards clearfix">  
+                    <div class="card-col-1">
+                        <Card 
+                            title="Test"
+                            body="Test Body jwdioajo sdjoiaw jjad oijo ajwoi djoawj dji waio djoij awoidj oiajw oidjw aoijdoijawi ojdoi ajoid joiaw jdoi jawdj oiada sldhw andosan jnwufa ioh"
+                            img="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            avatar="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            user="Benny"
+                        />
+                        <Card 
+                            title="Test"
+                            body="Test Body awodh oaw doijaodi jawoid jioawj dijda woij d"
+                            img="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            avatar="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            user="Benny"
+                        />
                     </div>
-                    <br/>
-                    <div>
-                        <h3>Create a Post</h3>
-                        <PostForm onSubmit={this.onSubmit} />
+                    <div class="card-col-2">
+                        <Card 
+                            title="Test"
+                            body="Test Bodya doia jwiojd"
+                            img="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            avatar="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            user="Benny"
+                        />
+                        <Card 
+                            title="Test"
+                            body="Test Body awodh oaw doijaodi jawoid jioawj dijda woij d"
+                            img="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            avatar="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            user="Benny"
+                        />
+                    </div>
+                    <div class="card-col-3">
+                        <Card 
+                            title="Test"
+                            body="Test Body"
+                            img="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            avatar="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            user="Benny"
+                        />
+                        <Card 
+                            title="Test"
+                            body="Test Body awodh oaw doijaodi jawoid jioawj dijda woij djojoij oiwdjaio jwaoijd iowahd hau hduwah idohawou duahdo uwajo jdi waj iodjaiwo hdiowah doh ioahdo iwaiod jwaiod jaiwojd id wiajd ia jwidj awd ijd a"
+                            img="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            avatar="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2015%2F04%2F05%2Ffeatured.jpg&q=85"
+                            user="Benny"
+                        />
                     </div>
                 </div>
-            )
-        } else {
-            return (
-                <div>
-                    <p>There's no posts to view...</p>
-                    <br/>
-                    <div>
-                        <h3>Create a Post</h3>
-                        <PostForm onSubmit={this.onSubmit} />
-                    </div>
-                </div>
-            )
-        }
+            </div>
+        )
     }
 }
 

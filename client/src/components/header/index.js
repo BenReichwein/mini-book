@@ -6,7 +6,8 @@ import Avatar from '../../asset/avatar.svg';
 import Times from '../../asset/times.svg';
 import Bars from '../../asset/bars.svg';
 import Button from './button';
-import './header.css';
+import './styles.css';
+import history from '../../history';
 
 const Header = () => {
   const [active, setActive] = useState(false);
@@ -36,7 +37,7 @@ const Header = () => {
         <Link to="/publish" className="nav-links" onClick={handleClick}>
           <li>Publish</li>
         </Link>
-        <Button>
+        <Button onClick={()=> history.push('/profile')}>
           <img src={Avatar} alt="Avatar" />
         </Button>
       </ul>

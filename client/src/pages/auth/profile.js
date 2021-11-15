@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react'
 import {loadProfile, updateProfile, logout} from '../../actions'
 import AuthForm from '../../components/forms/auth-form';
+import './profile.css'
 
 class Profile extends Component {
     onSubmit = async formValues => {
@@ -15,12 +16,30 @@ class Profile extends Component {
 
     render() {
         return (
-        <div>
-            <h3>Email: {this.props.profile.email}</h3>
-            <h3>Hashed Password: {this.props.profile.password}</h3>
-            <h2>Update Profile below</h2>
-            <AuthForm onSubmit={this.onSubmit} />
-            <br/>
+        <div className="profile">
+            <hr 
+            style={{width: '90%', margin:'0 5%'}} 
+            size="3" 
+            color="gray" /> 
+            <h1 style={{textAlign: 'center'}}>
+                AVATAR SELECTION (coming soon)
+            </h1>
+            <hr 
+            style={{width: '90%', margin:'0 5%'}} 
+            size="3" 
+            color="gray" /> 
+            <div className="authInputs">
+                <label><b>Display Name: </b></label>
+                <input placeholder={this.props.profile.username}/>
+
+                <label><b>Email: </b></label>
+                <input placeholder={this.props.profile.email}/>
+
+                <label><b>Password: </b></label>
+                <input type="password" placeholder='Enter your current password'/>
+                <input type="password" placeholder='Enter a new password'/>
+            </div>
+
             <button onClick={()=>this.props.logout()}>Logout</button>
         </div>
         );

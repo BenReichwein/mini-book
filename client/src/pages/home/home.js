@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react'
 
-import HeaderCard from '../../components/header-card/header-card';
+import HeaderCard from '../../components/header-card';
 import {welcomeMessage} from '../../actions'
 import history from '../../history';
 
@@ -16,7 +16,7 @@ class Home extends Component {
                     titleText="Still need to decide on text that
                     will relatively be this length but talks about reading..."
                     buttonText="Visit Reads"
-                    buttonClick={()=> history.push('reads')}
+                    buttonClick={()=> history.push('post')}
                 />
                 {this.props.message}
             </div>

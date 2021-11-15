@@ -1,0 +1,21 @@
+.cards {
+    width: 90%;
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 1rem;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.card-col-1,
+.card-col-2,
+.card-col-3 {
+    width: calc(33.3333333% - 12px);
+    margin: 0 6px;
+    float: left;
+}

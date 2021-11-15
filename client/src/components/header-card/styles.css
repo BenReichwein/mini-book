@@ -8,11 +8,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.headerCard h3 {
+.headerCard h4 {
     color: white;
     padding-left: 20px;
     padding-top: 25px;
     line-break: auto;
+    font-weight: 100;
     width: 50%;
     font-size: 2vw;
 }
@@ -33,8 +34,8 @@
 
 .headerCard button:hover {
     background-color: #f8eda6;
-    padding-left: 16%;
-    padding-right: 16%;
+    padding-left: 19%;
+    padding-right: 19%;
     transition: 250ms;
 }
 
@@ -47,7 +48,7 @@
 }
 
 @media (max-width: 960px) {
-    .headerCard h3 {
+    .headerCard h4 {
         font-size: 15px;
         width: 50%;
     }
