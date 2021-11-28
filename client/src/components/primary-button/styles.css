@@ -1,0 +1,42 @@
+:root {
+    --primary: #FFD99C;
+}
+  
+.primeBtn {
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    background-color: var(--primary);
+    color: #746A6A;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.primeBtn:hover {
+    background-color: #f1bd68;
+    transition: 250ms;
+}
+
+.primeBtn-medium {
+    font-size: 16px;
+    padding: 8px 20px;
+}
+
+.primeBtn-large {
+    padding: 12px 40px;
+    font-size: 20px;
+}
+
+@media (max-width: 960px) {
+    .primeBtn-medium {
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+    
+    .primeBtn-large {
+        padding: 8px 30px;
+        font-size: 18px;
+    }
+}
+

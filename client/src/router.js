@@ -9,6 +9,7 @@ import Profile from './pages/auth/profile'
 import UserProfile from './pages/auth/user-profile'
 import Post from './pages/post/post'
 import Register from './pages/auth/register'
+import Publish from './pages/publish/publish';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/post" exact component={Post} />
+            <Route path="/publish" exact component={Publish} />
             <Route path="/login" exact component={Login} />
             <Route path="/register" exact component={Register} />
             <Route path="/profile" component={withAuth(Profile)} />

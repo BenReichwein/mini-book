@@ -6,7 +6,7 @@
     margin-bottom: 12px;
 }
 
-.top {
+.card .top {
     position: relative;
     background: url(http://bdb.bertsozale.eus/images/grid-loading.gif) #d2d2d2;
     background-position: center center;
@@ -15,17 +15,18 @@
     border-radius: 8px 8px 0 0;
 }
 
-.top img {
+.card img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     border-radius: 8px 8px 0 0;
+    object-fit: cover;
     display: block;
 }
 
-.bottom {
+.card .bottom {
     padding: 1rem;
     background: #FFFCE7;
     border-radius: 0 0 8px 8px;
@@ -47,15 +48,16 @@
 }
 
 .author img {
+    position: relative;
     border-radius: 50%;
-    float: left;
     width: 30px;
     height: 30px;
 }
 
 .author label {
-    margin-left: 5px;
-    margin-top: 10px;
+    position: absolute;
+    margin-left: 40px;
+    margin-top: -25px;
     font-size: 16px;
     color: #696859;
 }

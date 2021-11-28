@@ -33,7 +33,7 @@ export const login = (formValues) => () => {
       console.log(res.data)
       const token = res.data.access_token;
       axios.defaults.headers.common["Authorization"] = token;
-      history.push('/')
+      history.push('/profile')
     }
   })
   .catch(err => {

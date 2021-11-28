@@ -1,0 +1,54 @@
+.publishedContainer {
+    width: 85%;
+    margin: 30px auto;
+    border-radius: 7px;
+    border: 2px solid #EFEFEF;
+    background-color: #FFFCE7;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.publishedContainer img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    display: block;
+}
+
+.publishedContainer .top {
+    position: relative;
+    background: url(http://bdb.bertsozale.eus/images/grid-loading.gif) #d2d2d2;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.publishedContainer .bottom {
+    padding: 1rem;
+    background: #FFFCE7;
+    border-radius: 0 0 8px 8px;
+}
+
+.publishedContainer h2 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.publishedContainer p {
+    color: #888;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.publishedContainer .bottom img {
+    position: relative;
+    float: right;
+    width: 25px;
+    height: 25px;
+}
