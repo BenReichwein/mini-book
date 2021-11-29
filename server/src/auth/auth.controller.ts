@@ -36,7 +36,7 @@ export class AuthController {
   async logout(@Res() response: Response) {
     console.log('AuthController(): logout');
     return response
-      .cookie('access_token', 'No more token', {
+      .cookie('access_token', null, {
         httpOnly: true,
         domain: 'localhost',
       })

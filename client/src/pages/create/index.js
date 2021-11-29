@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react'
 import {loadProfile, updateProfile, logout} from '../../actions'
-import './profile.css'
+import './styles.css'
 
 class Profile extends Component {
     onSubmit = async formValues => {

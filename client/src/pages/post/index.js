@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createPost, getPost, deletePost, createComment, deleteComment, getUid } from '../../actions';
 import HeaderCard from '../../components/header-card';
 import Card from '../../components/card';
-import './post.css'
+import './styles.css'
 
 class Post extends React.Component {
     onSubmit = formValues => {

@@ -1,0 +1,10 @@
+.titleText {
+    text-align: center;
+    color: #444238;
+}
+
+@media (max-width: 960px) {
+    .titleText {
+        font-size: 26px;
+    }
+}

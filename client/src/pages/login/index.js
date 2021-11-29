@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import { connect } from 'react-redux';
-import { login } from '../../actions';
+import { login, register } from '../../actions';
 import {LoginForm} from '../../components/login-form'
 import Times from '../../asset/times.svg'
 import '../../components/login-form/styles.scss'
@@ -18,6 +18,14 @@ class Login extends React.Component {
         const newMode = this.state.mode === 'login' ? 'signup' : 'login';
         this.setState({ mode: newMode});
     }
+
+    onSubmit = async formValues => {
+        if (this.state.mode === 'login') {
+            await this.props.login(formValues);
+        } else {
+            await this.props.register(formValues);
+        }
+    };
     render() {
         return (
             <div>
@@ -32,7 +40,7 @@ class Login extends React.Component {
                             <label htmlFor="form-toggler"></label>
                         </div>
                     </header>
-                    <LoginForm mode={this.state.mode} onSubmit={()=> console.log('submit')} />
+                    <LoginForm mode={this.state.mode} onSubmit={this.onSubmit}/>
                 </section>
             </div>
         )
@@ -41,5 +49,5 @@ class Login extends React.Component {
 
 export default connect(
   null,
-  { login }
+  { login, register }
 )(Login);

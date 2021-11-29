@@ -6,7 +6,7 @@ import { getPost, deletePost, getUid } from '../../actions';
 import PrimaryButton from '../../components/primary-button';
 import PublishedCard from '../../components/published-card';
 import history from '../../history';
-import './publish.css'
+import './styles.css'
 
 class Publish extends React.Component {
 
