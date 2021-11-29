@@ -23,8 +23,8 @@ const Header = () => {
       </h1>
       <div className="menu-icon" onClick={handleClick}>
         {active ?
-          (<img src={Bars}></img>) :
-          (<img src={Times}></img>)
+          (<img src={Times}></img>) :
+          (<img src={Bars}></img>)
         }
       </div>
       <ul className={active ? "nav-menu active" : "nav-menu"}>

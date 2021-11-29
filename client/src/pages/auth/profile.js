@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react'
 import {loadProfile, updateProfile, logout} from '../../actions'
-import AuthForm from '../../components/forms/auth-form';
 import './profile.css'
 
 class Profile extends Component {
