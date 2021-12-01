@@ -1,52 +1,50 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react'
-import {loadProfile, updateProfile, logout} from '../../actions'
+import PrimaryButton from '../../components/primary-button'
 import './styles.css'
 
-class Profile extends Component {
+class Create extends Component {
     onSubmit = async formValues => {
-        await this.props.updateProfile(formValues);
-        this.props.loadProfile()
+        console.log('submitted')
     };
-
-    componentDidMount = async () => {
-        await this.props.loadProfile();
-    }
 
     render() {
         return (
-        <div className="profile">
+        <div className="create">
             <hr 
             style={{width: '90%', margin:'0 5%'}} 
             size="3" 
             color="gray" /> 
             <h1 style={{textAlign: 'center'}}>
-                AVATAR SELECTION (coming soon)
+                IMAGE UPLOAD (coming soon)
             </h1>
             <hr 
-            style={{width: '90%', margin:'0 5%'}} 
+            style={{width: '90%', margin:'0 5%', marginBottom: '30px'}} 
             size="3" 
             color="gray" /> 
-            <div className="authInputs">
-                <label><b>Display Name: </b></label>
-                <input placeholder={this.props.profile.username}/>
+            <label><b>Title: </b></label>
+            <textarea rows="1" placeholder="The poet is dead"/>
 
-                <label><b>Email: </b></label>
-                <input placeholder={this.props.profile.email}/>
+            <label><b>Summary: </b></label>
+            <textarea rows="2" placeholder="Well you can guess that the poet died in this one, 
+                                but its going to be engaging I swear"/>
 
-                <label><b>Password: </b></label>
-                <input type="password" placeholder='Enter your current password'/>
-                <input type="password" placeholder='Enter a new password'/>
-            </div>
+            <label><b>Story: </b></label>
+            <textarea rows="6" placeholder='Once upon a time... other cheesy story starts'/>
 
-            <button onClick={()=>this.props.logout()}>Logout</button>
+            <PrimaryButton
+                text="Create"
+                buttonSize="primeBtn-large"
+                onClick={this.onSubmit}
+                style={{margin: '15px auto', display: 'block'}}
+            />
         </div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    return {profile: state.profile}
+    return null
 }
 
-export default connect(mapStateToProps, {loadProfile, updateProfile, logout})(Profile)
+export default connect(mapStateToProps, {})(Create)

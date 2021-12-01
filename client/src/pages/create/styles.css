@@ -1,10 +1,19 @@
-.titleText {
-    text-align: center;
-    color: #444238;
+.create {
+    width: 95%;
+    margin: 20px 2.5%;
 }
 
-@media (max-width: 960px) {
-    .titleText {
-        font-size: 26px;
-    }
+.create textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.create textarea::placeholder {
+    color: #888;
 }
